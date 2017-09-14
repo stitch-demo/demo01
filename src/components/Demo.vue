@@ -3,7 +3,7 @@
     <h1>Demo</h1>
     <div v-for="(q, index) in questions" :key="index" v-if="q.seq <= current">
       <h3>{{ q.text }}</h3>
-      <h4 v-if="isSelected(q.seq)">a</h4>
+      <h4 v-if="isSelected(q.seq)">{{ getSelected(q.seq) }} </h4>
       <ul v-else>
         <li v-for="(c, i2) in q.choices" :key="i2">
           <button @click="selectChoice(q.seq, c)">{{ c }}</button>
